@@ -17,19 +17,19 @@ const SingleUserPage = async ({ params }) => {
           <input
             type="hidden"
             name="id"
-            value={user.id}
+            value={user?.id}
           />
           <label>Nombre</label>
           <input
             type="text"
             name="name"
-            placeholder={user.name}
+            placeholder={user?.name}
           />
           <label>Correo</label>
           <input
             type="email"
             name="email"
-            placeholder={user.email}
+            placeholder={user?.email}
           />
           <label>Contraseña</label>
           <input
@@ -40,7 +40,7 @@ const SingleUserPage = async ({ params }) => {
           <input
             type="text"
             name="phone"
-            placeholder={user.phone}
+            placeholder={user?.phone}
           />
           <button>Update</button>
         </form>

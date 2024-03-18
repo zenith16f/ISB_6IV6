@@ -29,15 +29,15 @@ const UsersPage = async ({ searchParams }) => {
         </thead>
         <tbody>
           {users.map((user) => (
-            <tr key={user.id}>
+            <tr key={user?.id}>
               <td>
-                <div className={styles.user}>{user.name}</div>
+                <div className={styles.user}>{user?.name}</div>
               </td>
-              <td>{user.email}</td>
-              <td> {user.createdAt?.toString().slice(4, 16)} </td>
+              <td>{user?.email}</td>
+              <td> {user?.createdAt?.toString().slice(4, 16)} </td>
               <td>
                 <div className={styles.buttons}>
-                  <Link href={`/dashboard/users/${user.id}`}>
+                  <Link href={`/dashboard/users/${user?.id}`}>
                     <button className={`${styles.button} ${styles.view}`}>
                       Detalles
                     </button>
@@ -46,7 +46,7 @@ const UsersPage = async ({ searchParams }) => {
                     <input
                       type="hidden"
                       name="id"
-                      value={user.id}
+                      value={user?.id}
                     />
                     <button className={`${styles.button} ${styles.delete}`}>
                       Eliminar
