@@ -1,14 +1,17 @@
-// import { addUser } from "@/app/lib/actions";
+import { addUser } from "@/app/libs/actions";
 import styles from "@/app/ui/dashboard/users/addUser/addUser.module.css";
 
 const AddUserPage = () => {
   return (
     <div className={styles.container}>
-      <form className={styles.form}>
+      <form
+        className={styles.form}
+        action={addUser}
+      >
         <input
           type="text"
           placeholder="Nombre"
-          name="username"
+          name="name"
           required
         />
         <input
@@ -28,28 +31,6 @@ const AddUserPage = () => {
           placeholder="Numero de telefono"
           name="phone"
         />
-        {/* <select
-          name="isAdmin"
-          id="isAdmin"
-        >
-          <option value={false}>Is Admin?</option>
-          <option value={true}>Yes</option>
-          <option value={false}>No</option>
-        </select>
-        <select
-          name="isActive"
-          id="isActive"
-        >
-          <option value={true}>Is Active?</option>
-          <option value={true}>Yes</option>
-          <option value={false}>No</option>
-        </select> */}
-        <textarea
-          name="Dirección"
-          id="address"
-          rows="16"
-          placeholder="Address"
-        ></textarea>
         <button type="submit">Submit</button>
       </form>
     </div>
