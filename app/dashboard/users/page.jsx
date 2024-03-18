@@ -13,7 +13,6 @@ const UsersPage = async ({ searchParams }) => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <SearchComponent placeholder={"Buscar un usuario"} />
         <Link href={"/dashboard/users/add"}>
           <button className={styles.addButton}>Agregar Usuario</button>
         </Link>
@@ -59,7 +58,7 @@ const UsersPage = async ({ searchParams }) => {
         </tbody>
       </table>
 
-      <Pagination />
+      {/* <Pagination /> */}
     </div>
   );
 };

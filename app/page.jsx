@@ -8,6 +8,13 @@ export default function Home() {
         implementara paginacion en la tabla de usuarios y productos.
       </p>
 
+      <p>
+        Hay una falla con las busquedas de usaurios y la paginacion por lo que
+        estaran desabilidata hasta nuevo aviso.
+      </p>
+
+      <p>El proyecto esta hecho con Next.js, TailwindCSS, Prisma, MySQL y fé</p>
+
       <button>
         <a href="/dashboard">Ir a la Pagina Inicial</a>
       </button>

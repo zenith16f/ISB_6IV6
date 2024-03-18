@@ -30,16 +30,16 @@ const menuItems = [
       },
     ],
   },
-  {
-    title: "User",
-    list: [
-      {
-        title: "Settings",
-        path: "/dashboard/settings",
-        icon: <MdOutlineSettings />,
-      },
-    ],
-  },
+  // {
+  //   title: "User",
+  //   list: [
+  //     {
+  //       title: "Settings",
+  //       path: "/dashboard/settings",
+  //       icon: <MdOutlineSettings />,
+  //     },
+  //   ],
+  // },
 ];
 
 const Sidebar = () => {
@@ -73,10 +73,10 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
-      <button className={styles.logout}>
+      {/* <button className={styles.logout}>
         <MdLogout size={20} />
         Logout
-      </button>
+      </button> */}
     </div>
   );
 };
