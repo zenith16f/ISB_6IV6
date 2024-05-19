@@ -1,4 +1,5 @@
 "use server";
+import * as bcrypt from "bcrypt";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import prisma from "./prisma";
@@ -6,12 +7,16 @@ import prisma from "./prisma";
 export const addUser = async (formData) => {
   const { name, email, password, phone } = Object.fromEntries(formData);
 
+  const salt = await bcrypt.genSalt(10);
+
+  const hashedPassword = await bcrypt.hash(password, salt);
+
   try {
     const newUser = await prisma.user.create({
       data: {
         name,
         email,
-        password,
+        password: hashedPassword,
         phone,
       },
     });
