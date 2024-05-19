@@ -1,11 +1,8 @@
 import prisma from "./prisma";
 
-export const fetchUsers = async (q) => {
-  const regex = new RegExp(q, "i");
+export const fetchUsers = async () => {
   try {
-    const users = await prisma.user.findMany({
-      where: { OR: [{ name: { contains: q } }, { email: { contains: q } }] },
-    });
+    const users = await prisma.user.findMany();
     return users;
   } catch (error) {
     console.log(error);
@@ -14,7 +11,6 @@ export const fetchUsers = async (q) => {
 };
 
 export const fetchUser = async (id) => {
-  console.log(id);
   try {
     const user = await prisma.user.findUnique({
       where: {

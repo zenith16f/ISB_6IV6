@@ -1,11 +1,5 @@
 import Image from "next/legacy/image";
-import {
-  MdDashboard,
-  MdLogout,
-  MdOutlineSettings,
-  MdShoppingBag,
-  MdSupervisedUserCircle,
-} from "react-icons/md";
+import { MdDashboard, MdLogout, MdSupervisedUserCircle } from "react-icons/md";
 import MenuLink from "./menuLink/menuLink";
 import styles from "./sidebar.module.css";
 
@@ -22,11 +16,6 @@ const menuItems = [
         title: "Users",
         path: "/dashboard/users",
         icon: <MdSupervisedUserCircle />,
-      },
-      {
-        title: "Products",
-        path: "/dashboard/products",
-        icon: <MdShoppingBag />,
       },
     ],
   },

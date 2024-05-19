@@ -40,8 +40,6 @@ export const updateUser = async (formData) => {
         (updateFields[key] === "" || undefined) && delete updateFields[key]
     );
 
-    console.log(updateFields);
-
     const updatedUser = await prisma.user.update({
       where: {
         id: parseInt(id),
@@ -74,4 +72,17 @@ export const deleteUser = async (formData) => {
   }
 
   revalidatePath("/dashboard/users");
+};
+
+export const authenticate = async (prevState, formData) => {
+  const { username, password } = Object.fromEntries(formData);
+
+  try {
+    await signIn("credentials", { username, password });
+  } catch (err) {
+    if (err.message.includes("CredentialsSignin")) {
+      return "Wrong Credentials";
+    }
+    throw err;
+  }
 };

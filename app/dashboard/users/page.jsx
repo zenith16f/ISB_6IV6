@@ -1,14 +1,10 @@
 import { deleteUser } from "@/app/libs/actions";
 import { fetchUsers } from "@/app/libs/data";
-import Pagination from "@/app/ui/dashboard/pagination/pagination";
-import SearchComponent from "@/app/ui/dashboard/search/search";
 import styles from "@/app/ui/dashboard/users/users.module.css";
 import Link from "next/link";
 
-const UsersPage = async ({ searchParams }) => {
-  const q = searchParams?.q || "";
-
-  const users = await fetchUsers(q);
+const UsersPage = async () => {
+  const users = await fetchUsers();
 
   return (
     <div className={styles.container}>
@@ -57,8 +53,6 @@ const UsersPage = async ({ searchParams }) => {
           ))}
         </tbody>
       </table>
-
-      {/* <Pagination /> */}
     </div>
   );
 };
